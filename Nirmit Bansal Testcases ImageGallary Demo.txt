@@ -1,0 +1,39 @@
+TestCase 1 -> If we click both buttons of the mouse  then our image should be selected.
+
+TestCase 2 -> If we want to save the image into the local storage so all sytax should be acceptable.
+
+TestCase 3 -> If we want to save image as an pfd then all the images's syntax should be acceptable.
+
+TestCase 4 -> The image Should be saved in clear view.
+
+TestCase 5 -> The image should be save in proper width and height.
+
+TestCase 6 -> When we save the image in local storage then we should choose any drive in computer.
+
+TestCase 7 -> If we want to save the image so we should choose or create any folder.
+
+TestCase 8 -> If we want to save images then only selected images should be save in local storage.
+
+TestCase 9 -> Any image should be save more than once at a time.
+
+TestCase 10 -> If we want to save image then the image should be availabe into the resouse page.
+
+TestCase 11 -> Only appropriate image should be provided by the browser page.
+
+TestCase 12 -> By the clicking of the images then the save button visible otherwise save button should be invisible.
+
+TestCase 13 -> To save the images,the process should be easy.for save the image no longer process is required.
+
+TestCase 14 -> Our save button should be working properly or pressed correctly.
+
+TestCase 15 -> Our selected images should be save any configuration of the image.
+
+TestCase 16 -> Size of the images should be less. size means kbs/mbs.
+
+TestCase 17 -> if we want to rename the saved images then we can do it.
+
+TestCase 18 -> the UI should be intractive.
+
+TestCase 19 ->The images sholud be save one by one in the local storage of the computer.
+
+TestCase 20 -> our searched images should be provide easily.
