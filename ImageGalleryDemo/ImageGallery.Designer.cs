@@ -29,10 +29,10 @@ namespace ImageGalleryDemo
         /// </summary>
         private void InitializeComponent()
         {
+            C1.Win.C1Tile.PanelElement panelElement2 = new C1.Win.C1Tile.PanelElement();
+            C1.Win.C1Tile.ImageElement imageElement2 = new C1.Win.C1Tile.ImageElement();
+            C1.Win.C1Tile.TextElement textElement2 = new C1.Win.C1Tile.TextElement();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageGallery));
-            C1.Win.C1Tile.PanelElement panelElement1 = new C1.Win.C1Tile.PanelElement();
-            C1.Win.C1Tile.ImageElement imageElement1 = new C1.Win.C1Tile.ImageElement();
-            C1.Win.C1Tile.TextElement textElement1 = new C1.Win.C1Tile.TextElement();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -161,13 +161,13 @@ namespace ImageGalleryDemo
             // 
             // 
             // 
-            panelElement1.Alignment = System.Drawing.ContentAlignment.BottomLeft;
-            panelElement1.Children.Add(imageElement1);
-            panelElement1.Children.Add(textElement1);
-            panelElement1.Margin = new System.Windows.Forms.Padding(10, 6, 10, 6);
-            this._imageTileControl.DefaultTemplate.Elements.Add(panelElement1);
+            panelElement2.Alignment = System.Drawing.ContentAlignment.BottomLeft;
+            panelElement2.Children.Add(imageElement2);
+            panelElement2.Children.Add(textElement2);
+            panelElement2.Margin = new System.Windows.Forms.Padding(10, 6, 10, 6);
+            this._imageTileControl.DefaultTemplate.Elements.Add(panelElement2);
             this._imageTileControl.Groups.Add(this.group2);
-            this._imageTileControl.Location = new System.Drawing.Point(3, 135);
+            this._imageTileControl.Location = new System.Drawing.Point(3, 77);
             this._imageTileControl.Name = "_imageTileControl";
             this._imageTileControl.Size = new System.Drawing.Size(755, 567);
             this._imageTileControl.SurfacePadding = new System.Windows.Forms.Padding(12, 4, 12, 4);
@@ -206,11 +206,10 @@ namespace ImageGalleryDemo
             this._exportImage.Image = ((System.Drawing.Image)(resources.GetObject("_exportImage.Image")));
             this._exportImage.Location = new System.Drawing.Point(29, 3);
             this._exportImage.Name = "_exportImage";
-            this._exportImage.Size = new System.Drawing.Size(150, 47);
+            this._exportImage.Size = new System.Drawing.Size(135, 80);
             this._exportImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this._exportImage.TabIndex = 0;
             this._exportImage.TabStop = false;
-            this._exportImage.Visible = false;
             this._exportImage.Click += new System.EventHandler(this._exportImage_Click);
             this._exportImage.Paint += new System.Windows.Forms.PaintEventHandler(this._exportImage_Paint);
             // 

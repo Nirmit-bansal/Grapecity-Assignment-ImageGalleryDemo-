@@ -77,8 +77,8 @@ namespace ImageGalleryDemo
         private void _exportImage_Paint(object sender, PaintEventArgs e)
         {
             Rectangle r = new Rectangle(_exportImage.Location.X, _exportImage.Location.Y, _exportImage.Width, _exportImage.Height);
-            r.X = 29;
-            r.Y = 3;
+            r.X -= 29;
+            r.Y -= 3;
             r.Width--;
             r.Height--;
             Pen p = new Pen(Color.LightGray);
