@@ -40,11 +40,15 @@ namespace ImageGalleryDemo
             this.panel2 = new System.Windows.Forms.Panel();
             this._search = new System.Windows.Forms.PictureBox();
             this._imageTileControl = new C1.Win.C1Tile.C1TileControl();
+            this.group2 = new C1.Win.C1Tile.Group();
+            this.tile4 = new C1.Win.C1Tile.Tile();
+            this.tile5 = new C1.Win.C1Tile.Tile();
+            this.tile6 = new C1.Win.C1Tile.Tile();
+            this._exportImage = new System.Windows.Forms.PictureBox();
             this.group1 = new C1.Win.C1Tile.Group();
             this.tile1 = new C1.Win.C1Tile.Tile();
             this.tile2 = new C1.Win.C1Tile.Tile();
             this.tile3 = new C1.Win.C1Tile.Tile();
-            this._exportImage = new System.Windows.Forms.PictureBox();
             this.ImagePdfDocument = new C1.C1Pdf.C1PdfDocument();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
@@ -99,7 +103,6 @@ namespace ImageGalleryDemo
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(758, 36);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // panel1
             // 
@@ -163,23 +166,57 @@ namespace ImageGalleryDemo
             panelElement1.Children.Add(textElement1);
             panelElement1.Margin = new System.Windows.Forms.Padding(10, 6, 10, 6);
             this._imageTileControl.DefaultTemplate.Elements.Add(panelElement1);
-            this._imageTileControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._imageTileControl.Groups.Add(this.group1);
-            this._imageTileControl.Location = new System.Drawing.Point(0, 0);
+            this._imageTileControl.Groups.Add(this.group2);
+            this._imageTileControl.Location = new System.Drawing.Point(3, 135);
             this._imageTileControl.Name = "_imageTileControl";
-            this._imageTileControl.Size = new System.Drawing.Size(758, 705);
+            this._imageTileControl.Size = new System.Drawing.Size(755, 567);
             this._imageTileControl.SurfacePadding = new System.Windows.Forms.Padding(12, 4, 12, 4);
             this._imageTileControl.SwipeDistance = 20;
             this._imageTileControl.SwipeRearrangeDistance = 98;
             this._imageTileControl.TabIndex = 1;
-            this._imageTileControl.TileChecked += new System.EventHandler<C1.Win.C1Tile.TileEventArgs>(this._imageTileControl_TileChecked);
-            this._imageTileControl.TileUnchecked += new System.EventHandler<C1.Win.C1Tile.TileEventArgs>(this._imageTileControl_TileUnchecked);
-            this._imageTileControl.Paint += new System.Windows.Forms.PaintEventHandler(this._imageTileControl_Paint);
+            // 
+            // group2
+            // 
+            this.group2.Name = "group2";
+            this.group2.Text = "Group 1";
+            this.group2.Tiles.Add(this.tile4);
+            this.group2.Tiles.Add(this.tile5);
+            this.group2.Tiles.Add(this.tile6);
+            // 
+            // tile4
+            // 
+            this.tile4.BackColor = System.Drawing.Color.LightCoral;
+            this.tile4.Name = "tile4";
+            this.tile4.Text = "Tile 1";
+            // 
+            // tile5
+            // 
+            this.tile5.BackColor = System.Drawing.Color.Teal;
+            this.tile5.Name = "tile5";
+            this.tile5.Text = "Tile 2";
+            // 
+            // tile6
+            // 
+            this.tile6.BackColor = System.Drawing.Color.SteelBlue;
+            this.tile6.Name = "tile6";
+            this.tile6.Text = "Tile 3";
+            // 
+            // _exportImage
+            // 
+            this._exportImage.Image = ((System.Drawing.Image)(resources.GetObject("_exportImage.Image")));
+            this._exportImage.Location = new System.Drawing.Point(29, 3);
+            this._exportImage.Name = "_exportImage";
+            this._exportImage.Size = new System.Drawing.Size(150, 47);
+            this._exportImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this._exportImage.TabIndex = 0;
+            this._exportImage.TabStop = false;
+            this._exportImage.Visible = false;
+            this._exportImage.Click += new System.EventHandler(this._exportImage_Click);
+            this._exportImage.Paint += new System.Windows.Forms.PaintEventHandler(this._exportImage_Paint);
             // 
             // group1
             // 
             this.group1.Name = "group1";
-            this.group1.Text = "Group 1";
             this.group1.Tiles.Add(this.tile1);
             this.group1.Tiles.Add(this.tile2);
             this.group1.Tiles.Add(this.tile3);
@@ -201,19 +238,6 @@ namespace ImageGalleryDemo
             this.tile3.BackColor = System.Drawing.Color.SteelBlue;
             this.tile3.Name = "tile3";
             this.tile3.Text = "Tile 3";
-            // 
-            // _exportImage
-            // 
-            this._exportImage.Image = ((System.Drawing.Image)(resources.GetObject("_exportImage.Image")));
-            this._exportImage.Location = new System.Drawing.Point(29, 3);
-            this._exportImage.Name = "_exportImage";
-            this._exportImage.Size = new System.Drawing.Size(197, 60);
-            this._exportImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._exportImage.TabIndex = 0;
-            this._exportImage.TabStop = false;
-            this._exportImage.Visible = false;
-            this._exportImage.Click += new System.EventHandler(this._exportImage_Click);
-            this._exportImage.Paint += new System.Windows.Forms.PaintEventHandler(this._exportImage_Paint);
             // 
             // ImagePdfDocument
             // 
@@ -289,7 +313,6 @@ namespace ImageGalleryDemo
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox _search;
         private System.Windows.Forms.PictureBox _exportImage;
-        private C1.Win.C1Tile.C1TileControl _imageTileControl;
         private C1.Win.C1Tile.Group group1;
         private C1.Win.C1Tile.Tile tile1;
         private C1.Win.C1Tile.Tile tile2;
@@ -297,6 +320,11 @@ namespace ImageGalleryDemo
         private C1.C1Pdf.C1PdfDocument ImagePdfDocument;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private C1.Win.C1Tile.C1TileControl _imageTileControl;
+        private C1.Win.C1Tile.Group group2;
+        private C1.Win.C1Tile.Tile tile4;
+        private C1.Win.C1Tile.Tile tile5;
+        private C1.Win.C1Tile.Tile tile6;
     }
 }
 

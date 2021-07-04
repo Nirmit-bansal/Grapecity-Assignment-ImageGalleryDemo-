@@ -33,11 +33,6 @@ namespace ImageGalleryDemo
 
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-           
-        }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             Rectangle r = _searchBox.Bounds;
@@ -45,6 +40,7 @@ namespace ImageGalleryDemo
             Pen p = new Pen(Color.LightGray);
             e.Graphics.DrawRectangle(p, r);
         }
+
         private async void _search_Click(object sender, EventArgs e)
         {
             statusStrip1.Visible = true;
@@ -81,8 +77,8 @@ namespace ImageGalleryDemo
         private void _exportImage_Paint(object sender, PaintEventArgs e)
         {
             Rectangle r = new Rectangle(_exportImage.Location.X, _exportImage.Location.Y, _exportImage.Width, _exportImage.Height);
-            r.X -= 29;
-            r.Y -= 3;
+            r.X = 29;
+            r.Y = 3;
             r.Width--;
             r.Height--;
             Pen p = new Pen(Color.LightGray);
@@ -90,13 +86,13 @@ namespace ImageGalleryDemo
             e.Graphics.DrawLine(p, new Point(0, 43), new Point(this.Width, 43));
         }
 
-        private void _imageTileControl_TileChecked(object sender, C1.Win.C1Tile.TileEventArgs e)
+        private void _imageTileControl_TileChecked(object sender, TileEventArgs e)
         {
             checkedItems++;
             _exportImage.Visible = true;
         }
 
-        private void _imageTileControl_TileUnchecked(object sender, C1.Win.C1Tile.TileEventArgs e)
+        private void _imageTileControl_TileUnchecked(object sender, TileEventArgs e)
         {
             checkedItems--;
             _exportImage.Visible = checkedItems > 0;
@@ -141,6 +137,16 @@ namespace ImageGalleryDemo
             }
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sf = new SaveFileDialog();
+            sf.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif";
+
+            if(sf.ShowDialog()==DialogResult.OK)
+            {
+                ImagePdfDocument.Save(sf.FileName);
+            }
+        }
+    
     }
 }
