@@ -35,12 +35,16 @@ namespace ImageGalleryDemo
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
+           
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
             Rectangle r = _searchBox.Bounds;
             r.Inflate(3, 3);
             Pen p = new Pen(Color.LightGray);
             e.Graphics.DrawRectangle(p, r);
         }
-
         private async void _search_Click(object sender, EventArgs e)
         {
             statusStrip1.Visible = true;
@@ -51,7 +55,7 @@ namespace ImageGalleryDemo
 
         private void _searchBox_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void _exportImage_Click(object sender, EventArgs e)
@@ -136,5 +140,7 @@ namespace ImageGalleryDemo
                 ImagePdfDocument.DrawImage(selectedimg, rect);
             }
         }
+
+       
     }
 }
